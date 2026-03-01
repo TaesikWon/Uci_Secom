@@ -1,0 +1,9 @@
+numpy
+pandas
+scikit-learn
+matplotlib
+
+# Next steps (tree boosting / imbalance handling)
+lightgbm
+xgboost
+imbalanced-learn
