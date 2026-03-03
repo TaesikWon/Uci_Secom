@@ -19,6 +19,9 @@ venv/
 env/
 ENV/
 
+# Python version managers
+.python-version
+
 # =========================
 # Packaging / Build
 # =========================
@@ -28,6 +31,10 @@ dist/
 .eggs/
 pip-wheel-metadata/
 *.whl
+
+# Poetry / PDM (선택: lock을 커밋할지 정책에 따라)
+.poetry/
+.pdm.toml
 
 # =========================
 # Test / Coverage
@@ -39,6 +46,8 @@ htmlcov/
 .tox/
 .nox/
 .cache/
+nosetests.xml
+coverage.xml
 
 # =========================
 # Jupyter / IPython
@@ -56,12 +65,25 @@ htmlcov/
 *.iml
 
 # =========================
+# Lint / Type / Format caches
+# =========================
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+.pyright/
+.bandit
+.cache/
+
+# =========================
 # OS / System files
 # =========================
 .DS_Store
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+*.lnk
+*.stackdump
 
 # =========================
 # Logs
@@ -84,6 +106,13 @@ data/
 *.joblib
 *.h5
 *.hdf5
+*.npy
+*.npz
+*.arrow
+*.zarr/
+*.zip
+*.gz
+*.7z
 
 # =========================
 # Outputs / Artifacts
@@ -98,12 +127,32 @@ plots/
 *.gif
 *.svg
 *.pdf
+*.tiff
+*.bmp
 
-# Models
+# Models / Checkpoints
 models/
+checkpoints/
 *.pt
 *.pth
 *.onnx
+*.ckpt
+*.h5
+*.tflite
+*.pb
+
+# =========================
+# Experiment tracking / ML tools
+# =========================
+mlruns/          # MLflow
+wandb/           # Weights & Biases
+tensorboard/
+tb_logs/
+runs/            # TensorBoard default
+lightning_logs/  # PyTorch Lightning
+catboost_info/
+optuna/
+ray_results/
 
 # =========================
 # Environment / Secrets
@@ -127,3 +176,9 @@ temp/
 *.swp
 *.bak
 *~
+
+# =========================
+# Optional: local config
+# =========================
+config.local.*
+settings.local.*
